@@ -6,7 +6,7 @@
 /*   By: mhaziza <mhaziza@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 18:15:06 by mhaziza           #+#    #+#             */
-/*   Updated: 2016/11/21 18:16:49 by mhaziza          ###   ########.fr       */
+/*   Updated: 2016/12/06 20:52:05 by mhaziza          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_putstr(char const *s)
 {
-	if (s && s[0])
-	{
-		ft_putchar(s[0]);
-		ft_putstr(s + 1);
-	}
+	if (!s)
+		ft_putstr("(Null)");
+	else
+		write(1, s, ft_strlen(s));
 }
